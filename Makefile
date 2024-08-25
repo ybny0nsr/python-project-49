@@ -11,4 +11,4 @@ publish:	 # Публикация пакета
 	poetry publish --dry-run
 
 package-install: # Установка пакета в окружение пользователя
-	python3 -m pip install --user dist/*.whl
+	python3 -m pip install --user --force-reinstall dist/*.whl
