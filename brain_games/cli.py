@@ -2,8 +2,8 @@ import prompt
 
 
 def name_normalizer(raw_name: str) -> str:
-    '''Возвращает имена, записанные с заглавной буквы или "stranger",
-    если в аргументе только пробелы или None'''
+    '''Возвращает имена, записанные с заглавной буквы или stranger,
+    если в аргументе пробелы или None'''
     if raw_name is None or raw_name.strip() == "":
         return "stranger"
     else:
@@ -12,10 +12,11 @@ def name_normalizer(raw_name: str) -> str:
 
 
 def welcome_user():
-    '''Спрашивает имя пользователя и выводит приветствие'''
+    '''Спрашивает имя пользователя и выводит приветствие. Возвращает имя'''
     raw_user_name = prompt.string('May I have your name? ', empty=False)
     user_name = name_normalizer(raw_user_name)
     print(f'Hello, {user_name}!')
+    return user_name
 
 
 if __name__ == '__main__':
