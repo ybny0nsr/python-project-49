@@ -1,4 +1,4 @@
-install:	 # Эта команда полезна при первом клонировании репозитория или после удаления зависимостей
+install:	 # Первое клонирование репозитория или восстановление зависимостей
 	poetry install
 
 brain-games:
@@ -13,5 +13,5 @@ publish:	 # Публикация пакета
 package-install: # Установка пакета в окружение пользователя
 	python3 -m pip install --user --force-reinstall dist/*.whl
 
-lint:
+lint:		# Линтер
 	poetry run flake8 brain_games
