@@ -1,10 +1,13 @@
+#!/usr/bin/env python3
+
+
 import random
 import prompt
 from colorama import Fore
-import cli
+import brain_games.cli as cli
 
 
-def even_game():
+def main():
     user_name = cli.welcome_user()
     attempts = 3  # Кол-во попыток
     min_number, max_number = 1, 100  # диапазон номеров
@@ -28,4 +31,4 @@ def even_game():
 
 
 if __name__ == '__main__':
-    even_game()
+    main()
