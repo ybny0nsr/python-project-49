@@ -32,7 +32,7 @@ def main():
                             f"Let's try again, {user_name}", Fore.RESET, sep='')
             break  # завершение программы в случае неверного ответа
     else:  # если все ответы были верные, выводим поздравление
-        print(Fore.GREEN, f'Congratulations, {user_name}!', Fore.RESET)
+        print(Fore.GREEN, f'Congratulations, {user_name}!', Fore.RESET, sep='')
 
 
 if __name__ == '__main__':
