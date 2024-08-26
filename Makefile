@@ -4,6 +4,9 @@ install:	 # Первое клонирование репозитория или 
 brain-games:
 	poetry run brain-games
 
+brain-calc:
+	poetry run brain-calc
+
 build:		 # Сборка пакета
 	poetry build
 
