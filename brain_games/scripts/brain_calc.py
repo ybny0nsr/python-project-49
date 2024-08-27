@@ -16,6 +16,8 @@ def main():
                   ['-', lambda a, b: a - b]]  # реализующие операцию
     sign, function = 0, 1  # индексы для значка и для функции операций
 
+    print('What is the result of the expression?')
+
     for attempt in range(attempts):
         nr_one = random.randint(min_nr, max_nr)  # генерация 1го аргумента
         nr_two = random.randint(min_nr, max_nr)  # генерация 2го аргумента
