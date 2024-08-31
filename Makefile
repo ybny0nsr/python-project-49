@@ -1,12 +1,6 @@
 install:	 # Первое клонирование репозитория или восстановление зависимостей
 	poetry install
 
-brain-games:
-	poetry run brain-games
-
-brain-calc:
-	poetry run brain-calc
-
 build:		 # Сборка пакета
 	poetry build
 

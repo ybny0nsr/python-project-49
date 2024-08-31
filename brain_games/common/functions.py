@@ -88,6 +88,40 @@ def question_even(min_number: int, max_number: int) -> tuple:
     return question, correct_answer
 
 
+# функции для brain_progression
+def random_progression(progr_min_lenght: int, progr_max_length: int,
+                       progr_min_start: int, progr_max_start: int,
+                       progr_min_step: int, progr_max_step: int) -> list:
+    '''Принимает параметры: мин/макс длина, мин/макс 1-й член, мин/макс шаг
+    и генерирует рандомный фрагмент арифметической прогрессии'''
+    # Генерация случайных параметров прогрессии:
+    progr_start = random_number(progr_min_start, progr_max_start)  # 1й член
+    progr_length = random_number(progr_min_lenght, progr_max_length)  # длина
+    progr_step = random_number(progr_min_step, progr_max_step)  # шаг
+    progr_end = progr_start + progr_length * progr_step  # последний член
+
+    # Генерация собственно прогрессии
+    return [nr for nr in range(progr_start, progr_end, progr_step)]
+
+
+def question_progression(max_number: int, progr_parameters: tuple) -> tuple:
+    '''Возвращает строку-вопрос и правильный ответ
+    для игры в поиск пропущенного члена арифметической прогрессии'''
+
+    progression = random_progression(*progr_parameters)
+
+    # Генерация индекса "пропавшей" позиции
+    missed_idx = random_number(0, len(progression) - 1)
+
+    correct_answer = progression[missed_idx]  # верный ответ как целое
+    progression[missed_idx] = '..'  # подмена "пропавшего" числа
+
+    # вопрос как строка. Числа разделены двумя пробелами
+    question = "  ".join([str(member) for member in progression])
+
+    return question, correct_answer
+
+
 # функции общего применения
 def feedback(answer: str, correct_answer: str, user_name: str) -> bool:
     '''Сверка ответа пользователя и правильного ответа
