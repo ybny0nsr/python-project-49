@@ -1,34 +1,28 @@
-import random
 import prompt
 from colorama import Fore
+
 import brain_games.cli as cli
+import brain_games.common.settings as settings
+import brain_games.common.functions as f
 
 
 def main():
-    user_name = cli.welcome_user()  # приветствие, получение имени
-    attempts = 3  # Кол-во попыток
-    min_number, max_number = 1, 100  # диапазон номеров
-    parity = {True: 'yes', False: 'no'}  # четность и варианты ответов
+    user_name = cli.welcome_user()  # приветствие, запрос имени
 
-    print('Answer "yes" if the number is even, otherwise answer "no"')
+    print(settings.task_even)  # сообщаем условия игры
 
-    for attempt in range(attempts):
-        number = random.randint(min_number, max_number)  # целое в диапазоне
+    for attempt in range(settings.attempts):
+        # генерация вопроса и правильного ответа для жэтого вопроса
+        question, correct_answer = f.question_even(settings.min_number,
+                                                   settings.max_number)
+        print(question)  # выводим вопрос для текущей попытки
 
-        print(f'Question: {number}')  # задаем вопрос
+        answer = prompt.string('Your answer: ').lower()  # ответ - в прописные
 
-        is_even = number % 2 == 0  # True/False если четное/нечетное
-        correct_answer = parity[is_even]  # верный ответ (yes/no)
-        answer = prompt.string('Your answer: ').lower()  # ответ пользователя
-
-        if answer == correct_answer:    # удачная попытка
-            print(Fore.GREEN, 'Correct!', Fore.RESET, sep='')
-        else:                           # неудачная попытка
-            print(Fore.RED, f"'{answer}' is wrong answer ;(. "
-                            f"Correct answer was '{correct_answer}'.\n"
-                            f"Let's try again, {user_name}", Fore.RESET, sep='')
-            break  # завершение программы в случае неверного ответа
-    else:  # если все ответы были верные, выводим поздравление
+        check_result = f.feedback(answer, correct_answer, user_name)
+        if not check_result:  # ответ неверный, завершаем игру
+            break
+    else:  # если все попытки удачные, выводим поздравление
         print(Fore.GREEN, f'Congratulations, {user_name}!', Fore.RESET, sep='')
 
 

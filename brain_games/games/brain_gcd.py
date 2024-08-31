@@ -1,44 +1,28 @@
-#!/usr/bin/env python3
-
-
-import random
 import prompt
 from colorama import Fore
+
 import brain_games.cli as cli
+import brain_games.common.settings as settings
+import brain_games.common.functions as f
 
 
 def main():
-    user_name = cli.welcome_user()
-    attempts = 3  # Кол-во попыток
-    min_nr, max_nr = 1, 100  # диапазон аргументов
-    operations = [['*', lambda a, b: a * b],  # значки операций и
-                  ['+', lambda a, b: a + b],  # собственно функции,
-                  ['-', lambda a, b: a - b]]  # реализующие операцию
-    sign, function = 0, 1  # индексы для значка и для функции операций
+    user_name = cli.welcome_user()  # Приветствие, запрос имени
 
-    print('Find the greatest common divisor of given numbers.')
+    print(settings.task_gcd)  # сообщаем условия игры
 
-    for attempt in range(attempts):
-        nr_one = random.randint(min_nr, max_nr)  # генерация 1го аргумента
-        nr_two = random.randint(min_nr, max_nr)  # генерация 2го аргумента
-        if nr_two > nr_one:  # избегание отрицательных значений при разности
-            nr_one, nr_two = nr_two, nr_one
+    for attempt in range(settings.attempts):
+        # генерация вопроса и правильного ответа для этого вопроса
+        question, correct_answer = f.question_gcd(settings.max_number,
+                                                  settings.max_lcd)
+        print(question)  # выводим вопрос для текущей попытки
 
-        operation = random.choice(operations)  # случайный выбор операции
-        correct_answer = operation[function](nr_one,
-                                             nr_two)  # результат операции
-        print(f'Question: {nr_one} {operation[sign]} {nr_two}')
         answer = prompt.integer('Your answer: ')
 
-        if answer == correct_answer:  # верный ответ
-            print(Fore.GREEN, 'Correct!', Fore.RESET, sep='')
-        else:  # неверный ответ
-            print(Fore.RED, f"'{answer}' is wrong answer ;(. "
-                            f"Correct answer was '{correct_answer}'.\n"
-                            f"Let's try again, {user_name}", Fore.RESET,
-                  sep='')
-            break  # завершение программы при неверном ответе
-    else:  # если все ответы верные, выводим поздравление
+        check_result = f.feedback(answer, correct_answer, user_name)
+        if not check_result:  # ответ неверный, завершаем игру
+            break
+    else:  # если все попытки удачные, выводим поздравление
         print(Fore.GREEN, f'Congratulations, {user_name}!', Fore.RESET, sep='')
 
 
