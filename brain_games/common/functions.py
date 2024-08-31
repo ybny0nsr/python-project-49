@@ -122,6 +122,30 @@ def question_progression(max_number: int, progr_parameters: tuple) -> tuple:
     return question, correct_answer
 
 
+# функции для brain_prime
+def is_prime(number: int) -> bool:
+    if number == 2:
+        return True
+    if number <= 1 or number % 2 == 0:
+        return False
+    for d in range(3, int(number ** 0.5) + 1, 2):
+        if number % d == 0:
+            return False
+    return True
+
+
+def question_prime(min_number: int, max_number: int) -> tuple:
+    '''Возвращает строку-вопрос и правильный ответ
+    для игры с определением простого числа'''
+    number = random_number(min_number, max_number)
+    if not is_prime(number):  # повышаем вероятность "выпадения" prime - с 25%
+        number = random_number(min_number, max_number)  # до примерно 44%
+
+    question = f'Question: {number}'
+    correct_answer = 'yes' if is_prime(number) else 'no'  # правильный ответ
+    return question, correct_answer
+
+
 # функции общего применения
 def feedback(answer: str, correct_answer: str, user_name: str) -> bool:
     '''Сверка ответа пользователя и правильного ответа
