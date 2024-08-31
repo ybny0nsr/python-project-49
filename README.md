@@ -15,4 +15,4 @@
 <a href="https://asciinema.org/a/674247" target="_blank"><img src="https://asciinema.org/a/674247.svg" /></a>
 
 Демо brain-progr
-<a href="https://asciinema.org/a/CUxiyd6TzSpKfDeLKsAUabTit" target="_blank"><img src="https://asciinema.org/a/CUxiyd6TzSpKfDeLKsAUabTit.svg" /></a>
+<a href="https://asciinema.org/a/674283" target="_blank"><img src="https://asciinema.org/a/674283.svg" /></a>
