@@ -16,3 +16,6 @@
 
 Демо brain-progr
 <a href="https://asciinema.org/a/674283" target="_blank"><img src="https://asciinema.org/a/674283.svg" /></a>
+
+Демо nrain-prime
+<a href="https://asciinema.org/a/674297" target="_blank"><img src="https://asciinema.org/a/674297.svg" /></a>
