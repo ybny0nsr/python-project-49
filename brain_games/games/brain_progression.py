@@ -9,12 +9,12 @@ import brain_games.common.functions as f
 def main():
     user_name = cli.welcome_user()  # Приветствие, запрос имени
 
-    print(settings.task_progression)  # сообщаем условия игры
+    print(settings.TASK_PROGRESSION)  # сообщаем условия игры
 
-    for attempt in range(settings.attempts):
+    for attempt in range(settings.ATTEMPTS):
         # генерация вопроса и правильного ответа для этого вопроса
-        question, correct_answer = f.question_progression(settings.max_number,
-                                                          settings.progr_params)
+        question, correct_answer = f.question_progression(settings.MAX_NUMBER,
+                                                          settings.PROGR_PARAMS)
         print(question)  # выводим вопрос для текущей попытки
 
         answer = prompt.integer('Your answer: ')

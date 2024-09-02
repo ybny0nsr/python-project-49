@@ -9,12 +9,12 @@ import brain_games.common.functions as f
 def main():
     user_name = cli.welcome_user()  # приветствие, запрос имени
 
-    print(settings.task_even)  # сообщаем условия игры
+    print(settings.TASK_EVEN)  # сообщаем условия игры
 
-    for attempt in range(settings.attempts):
+    for attempt in range(settings.ATTEMPTS):
         # генерация вопроса и правильного ответа для жэтого вопроса
-        question, correct_answer = f.question_even(settings.min_number,
-                                                   settings.max_number)
+        question, correct_answer = f.question_even(settings.MIN_NUMBER,
+                                                   settings.MAX_NUMBER)
         print(question)  # выводим вопрос для текущей попытки
 
         answer = prompt.string('Your answer: ').lower()  # ответ - в прописные
