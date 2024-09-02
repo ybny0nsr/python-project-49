@@ -14,8 +14,8 @@
 Демо brain-gcd
 <a href="https://asciinema.org/a/674247" target="_blank"><img src="https://asciinema.org/a/674247.svg" /></a>
 
-Демо brain-progr
-<a href="https://asciinema.org/a/674283" target="_blank"><img src="https://asciinema.org/a/674283.svg" /></a>
+Демо brain-progression
+<a href="https://asciinema.org/a/674486" target="_blank"><img src="https://asciinema.org/a/674486.svg" /></a>
 
 Демо nrain-prime
 <a href="https://asciinema.org/a/674297" target="_blank"><img src="https://asciinema.org/a/674297.svg" /></a>
