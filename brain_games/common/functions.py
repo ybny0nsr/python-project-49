@@ -157,5 +157,5 @@ def feedback(answer: str, correct_answer: str, user_name: str) -> bool:
     else:  # неверный ответ
         print(Fore.RED, f"'{answer}' is wrong answer ;(. "
                         f"Correct answer was '{correct_answer}'.\n"
-                        f"Let's try again, {user_name}", Fore.RESET, sep='')
+                        f"Let's try again, {user_name}!", Fore.RESET, sep='')
         return False
