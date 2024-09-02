@@ -18,7 +18,7 @@ PROGR_PARAMS = (PROGR_MIN_LENGTH, PROGR_MAX_LENGTH,
                 PROGR_MIN_STEP, PROGR_MAX_STEP)
 
 # формулировки заданий для игры
-TASK_EVEN = 'Answer "yes" if the number is even, otherwise answer "no"'
+TASK_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".'
 TASK_CALC = 'What is the result of the expression?'
 TASK_GCD = 'Find the greatest common divisor of given numbers.'
 TASK_PROGRESSION = 'What number is missing in the progression?'
