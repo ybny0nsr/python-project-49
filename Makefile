@@ -12,3 +12,21 @@ package-install: # Установка пакета в окружение пол�
 
 lint:		# Линтер
 	poetry run flake8 brain_games
+
+brain-games:
+	poetry run brain-games
+
+brain-even:
+	poetry run brain-even
+
+brain-calc:
+	poetry run brain-calc
+
+brain-gcd:
+	poetry run brain-gcd
+
+brain-progr:
+	poetry run brain-progr
+
+brain-prime:
+	poetry run brain-prime
