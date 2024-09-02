@@ -116,8 +116,8 @@ def question_progression(max_number: int, progr_parameters: tuple) -> tuple:
     correct_answer = progression[missed_idx]  # верный ответ как целое
     progression[missed_idx] = '..'  # подмена "пропавшего" числа
 
-    # вопрос как строка. Числа разделены двумя пробелами
-    question = "  ".join([str(member) for member in progression])
+    # вопрос как строка. Числа разделены пробелом
+    question = " ".join([str(member) for member in progression])
 
     return question, correct_answer
 
