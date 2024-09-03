@@ -5,11 +5,11 @@
 <a href="https://codeclimate.com/github/ybny0nsr/python-project-49/maintainability"><img src="https://api.codeclimate.com/v1/badges/8387bd64d55abd7330a7/maintainability" /></a>
 
 ### The project implements 4 arithmetic games with natural numbers:
-####    brain-even: checking the parity of a number
-####    brain-calc: arithmetic calculations (addition, multiplication and subtraction)
-####    brain-gcd: finding the maximum common divisor
-####    brain-prime: checking whether a number is prime
-####    brain-progression: finding the missing member of an arithmetic progression
+- brain-even: checking the parity of a number
+- brain-calc: arithmetic calculations (addition, multiplication and subtraction)
+- brain-gcd: finding the maximum common divisor
+- brain-prime: checking whether a number is prime
+- brain-progression: finding the missing member of an arithmetic progression
 
 ### Instructions and demos
 How to build/publish/install the project:
