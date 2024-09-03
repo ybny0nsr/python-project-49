@@ -11,6 +11,9 @@
 - __brain-prime__: checking whether a number is prime
 - __brain-progression__: finding the missing member of an arithmetic progression
 
+Regular use of this type of exercise helps maintain cognitive abilities and mental health, and also solves the problem of excess free time.
+The interface is intuitive and does not require additional explanations.
+
 ### Instructions and demos
 How to build/publish/install the project:
 <a href="https://asciinema.org/a/673546" target="_blank"><img src="https://asciinema.org/a/673546.svg" /></a>
