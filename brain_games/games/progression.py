@@ -33,7 +33,7 @@ def question_progression(progr_parameters: tuple) -> tuple:
     progression[missed_idx] = '..'  # подмена "пропавшего" числа
 
     # вопрос как строка. Числа разделены пробелом
-    question = " ".join([str(member) for member in progression])
+    question = 'Question: ' + ' '.join([str(member) for member in progression])
 
     return question, correct_answer
 
