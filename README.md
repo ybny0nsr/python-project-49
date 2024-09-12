@@ -4,7 +4,7 @@
 [![Actions Status](https://github.com/ybny0nsr/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ybny0nsr/python-project-49/actions)
 <a href="https://codeclimate.com/github/ybny0nsr/python-project-49/maintainability"><img src="https://api.codeclimate.com/v1/badges/8387bd64d55abd7330a7/maintainability" /></a>
 
-### The project implements 4 arithmetic games with natural numbers:
+### The project implements 5 arithmetic games with natural numbers:
 - __brain-even__: checking the parity of a number
 - __brain-calc__: arithmetic calculations (addition, multiplication and subtraction)
 - __brain-gcd__: finding the maximum common divisor

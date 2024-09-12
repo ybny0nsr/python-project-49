@@ -24,8 +24,6 @@ def run_game(task: str, attempts: int, answer_request_func, gen_question_func,
 
     for attempt in range(attempts):
         # генерация вопроса и правильного ответа для этого вопроса
-        # question, correct_answer = f.question_even(settings.min_number,
-        #                                          settings.max_number)
         question, correct_answer = perform_func(gen_question_func, *args)
 
         print(question)  # выводим вопрос для текущей попытки
