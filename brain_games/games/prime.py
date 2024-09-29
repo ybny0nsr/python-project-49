@@ -9,10 +9,10 @@ MAX_NUMBER = 100  # до ...
 
 def is_prime(number: int) -> bool:
     ''' Один из канонических алгоритмов проверки, является ли число простым'''
-    if number <= 1 or number % 2 == 0:
-        return False
     if number == 2:
         return True
+    if number <= 1 or number % 2 == 0:
+        return False
     for d in range(3, int(number ** 0.5) + 1, 2):
         if number % d == 0:
             return False
