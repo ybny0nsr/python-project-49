@@ -3,9 +3,9 @@ import random
 # Параметры игры
 GAME_CONDITIONS = 'Find the greatest common divisor of given numbers.'
 MAX_NUMBER = 100  # Максимальное число для игры
-MAX_LCD = 9  # верхний предел для генерации случайного наименьшего
+MAX_LCD = 9       # Верхний предел для генерации случайного наименьшего
 # общего делителя. Вспомогательный технический параметр для расчета GCD,
-# рекомендуется выбирать в диапазоне 9...11
+# рекомендуется выбирать его значение в диапазоне 9...11
 
 
 def random_pair_gcd(max_number: int, max_lcd: int) -> tuple:
@@ -33,14 +33,14 @@ def find_gcd(nr_one: int, nr_two: int) -> int:
     divisors_one = find_divisors(nr_one)  # все делители для 1го аргумента
     divisors_two = find_divisors(nr_two)  # все делители для 2го аргумента
     common_divisors = divisors_one & divisors_two  # только общие делители
-    return max(common_divisors)           # наибольший из общих делителей
+    return max(common_divisors)
 
 
 def riddle_and_answer() -> tuple:
     '''Возвращает строку-вопрос и правильный ответ: наибольший общий делитель
-    для двух целых в диапазоне 1...max_number'''
+    для двух целых в диапазоне 1...MAX_NUMBER'''
     nr_one, nr_two = random_pair_gcd(MAX_NUMBER, MAX_LCD)
 
-    riddle = f'{nr_one} {nr_two}'                   # формулировка вопроса
-    correct_answer = f'{find_gcd(nr_one, nr_two)}'  # верный ответ
+    riddle = f'{nr_one} {nr_two}'
+    correct_answer = f'{find_gcd(nr_one, nr_two)}'
     return riddle, correct_answer
