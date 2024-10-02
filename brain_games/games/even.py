@@ -10,8 +10,6 @@ def riddle_and_answer() -> tuple:
     '''Возвращает строку-вопрос и правильный ответ
     для игры с определением четного-нечетного'''
     number = randint(MIN_NUMBER, MAX_NUMBER)
-
     riddle = f'{number}'
     correct_answer = 'yes' if number % 2 == 0 else 'no'
-
     return riddle, correct_answer

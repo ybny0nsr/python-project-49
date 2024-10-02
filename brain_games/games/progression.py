@@ -12,27 +12,19 @@ PROGR_STEP_MAX = 11  # максимальный шаг прогрессии
 
 def random_progression() -> list:
     '''Генерирует рандомный фрагмент арифметической прогрессии'''
-
-    # Генерация параметров прогрессии:
-    progr_start = randint(PROGR_FIRST_MIN, PROGR_FIRST_MAX)  # 1й член
-    progr_length = randint(PROGR_LENGTH_MIN, PROGR_LENGTH_MAX)  # длина
-    progr_step = randint(PROGR_STEP_MIN, PROGR_STEP_MAX)  # шаг прогрессии
-    progr_end = progr_start + progr_length * progr_step  # последний член
-
-    # Генерация собственно прогрессии:
-    return [nr for nr in range(progr_start, progr_end, progr_step)]
+    progr_first = randint(PROGR_FIRST_MIN, PROGR_FIRST_MAX)
+    progr_length = randint(PROGR_LENGTH_MIN, PROGR_LENGTH_MAX)
+    progr_step = randint(PROGR_STEP_MIN, PROGR_STEP_MAX)
+    progr_last = progr_first + progr_step * progr_length
+    return list(range(progr_first, progr_last, progr_step))
 
 
 def riddle_and_answer() -> tuple:
     '''Возвращает вопрос и правильный ответ для игры
        в поиск пропущенного члена арифметической прогрессии'''
     progression = random_progression()
-
-    # Генерация индекса пропущенной позиции
     missed_idx = randint(0, len(progression) - 1)
-
     correct_answer = f'{progression[missed_idx]}'
-    progression[missed_idx] = '..'  # подмена пропущенного члена
+    progression[missed_idx] = '..'
     riddle = ' '.join([str(member) for member in progression])
-
     return riddle, correct_answer

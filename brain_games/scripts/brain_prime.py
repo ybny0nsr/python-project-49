@@ -6,7 +6,7 @@ import brain_games.games.prime as prime
 
 
 def main():
-    game_engine.run_game(prime)
+    game_engine.run(prime)
 
 
 if __name__ == '__main__':

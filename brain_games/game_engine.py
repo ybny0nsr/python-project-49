@@ -6,19 +6,13 @@ import prompt
 NUMBER_OF_ATTEMPTS = 3  # количество попыток в игре
 
 
-def welcome_user():
-    '''Запрашивает имя пользователя, форматирует его и выводит приветствие'''
-    raw_user_name = prompt.string('May I have your name? ', empty=False)
-    user_name = " ".join([name.capitalize() for name in raw_user_name.split()])
-    print(f'Hello, {user_name}!')
-    return user_name
-
-
-def run_game(game_module):
+def run(game_module):
     ''' Принимает на вход модуль игры и реализует логику игры
         по единому шаблону.'''
 
-    user_name = welcome_user()  # запрос имени пользователя, приветствие
+    raw_user_name = prompt.string('May I have your name? ', empty=False)
+    user_name = " ".join([name.capitalize() for name in raw_user_name.split()])
+    print(f'Hello, {user_name}!')
 
     print(game_module.GAME_CONDITIONS)  # объявляем условия игры
 

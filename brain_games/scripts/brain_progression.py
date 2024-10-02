@@ -6,7 +6,7 @@ import brain_games.games.progression as progression
 
 
 def main():
-    game_engine.run_game(progression)
+    game_engine.run(progression)
 
 
 if __name__ == '__main__':
